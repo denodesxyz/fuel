@@ -36,10 +36,10 @@ source $HOME/.bash_profile
 
 mkdir $HOME/.fuel
 cd $HOME/.fuel
-wget https://github.com/FuelLabs/chain-configuration/raw/master/ignition/chain_config.json
-wget https://github.com/FuelLabs/chain-configuration/raw/master/ignition/metadata.json
-wget https://github.com/FuelLabs/chain-configuration/raw/master/ignition/state_config.json
-wget https://github.com/FuelLabs/chain-configuration/raw/master/ignition/state_transition_bytecode.wasm
+wget -O chain_config.json https://github.com/FuelLabs/chain-configuration/raw/master/ignition/chain_config.json
+wget -O metadata.json https://github.com/FuelLabs/chain-configuration/raw/master/ignition/metadata.json
+wget -O state_config.json https://github.com/FuelLabs/chain-configuration/raw/master/ignition/state_config.json
+wget -O state_transition_bytecode.wasm https://github.com/FuelLabs/chain-configuration/raw/master/ignition/state_transition_bytecode.wasm
 
 cd $HOME
 sudo tee /etc/systemd/system/fueld.service > /dev/null <<EOF
