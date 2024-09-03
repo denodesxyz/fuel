@@ -17,6 +17,7 @@ touch $HOME/.bash_profile
 source $HOME/.bash_profile
 
 curl https://install.fuel.network | sh
+PATH="$HOME/.fuelup/bin:$PATH"
 source $HOME/.bashrc
 
 echo ""
