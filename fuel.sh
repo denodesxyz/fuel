@@ -17,19 +17,17 @@ touch $HOME/.bash_profile
 source $HOME/.bash_profile
 
 curl https://install.fuel.network | sh
-echo 'export PATH="$HOME/.fuelup/bin:$PATH"' >> $HOME/.bash_profile
 source $HOME/.bashrc
 
-read -rsn1 -p"Press any key to generate the private key. You’ll need this key in the next step"; echo
+read -rsn1 -p"\nPress any key to generate the private key. You’ll need this key in the next step"; echo
 
 fuel-core-keygen new --key-type peering
 
-echo 'Enter the private key from the "secret" field:'
 read -p 'Enter the private key from the "secret" field: ' P2P_SECRET
-echo 'export P2P_SECRET="{P2P_SECRET}"' >> $HOME/.bash_profile
+echo 'export P2P_SECRET="${P2P_SECRET}"' >> $HOME/.bash_profile
 
-read -p "Enter the Sepolia RPC:" SEPOLIA_RPC
-echo 'export SEPOLIA_RPC=https://eth-sepolia.g.alchemy.com/v2/{SEPOLIA_RPC}' >> $HOME/.bash_profile
+read -p "Enter the Sepolia RPC: " SEPOLIA_RPC
+echo 'export SEPOLIA_RPC=${SEPOLIA_RPC}' >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 mkdir $HOME/.fuel
