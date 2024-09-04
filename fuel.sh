@@ -51,20 +51,20 @@ Description=fueld
 Type=simple
 User=root
 ExecStart=$(which fuel-core) run \
-  --service-name fueld \
+  --service-name fuel-sepolia-testnet-node \
   --keypair $P2P_SECRET \
   --relayer $SEPOLIA_RPC \
-  --ip 0.0.0.0 --port 4000 --peering-port 30333 \
-  --db-path  $HOME/.fuel \
-  --snapshot $HOME/.fuel \
+  --ip=0.0.0.0 --port=4000 --peering-port=30333 \
+  --db-path=~/.fuel \
+  --snapshot ~/.fuel \
   --utxo-validation --poa-instant false --enable-p2p \
-  --min-gas-price 1 --max-block-size 18874368  --max-transmit-size 18874368 \
-  --reserved-nodes /dns4/p2p-devnet.fuel.network/tcp/30333/p2p/16Uiu2HAm6pmJUedRFjennk4A8yWL6zCApHCuykzRRroqMjjxZ8o6,/dns4/p2p-devnet.fuel.network/tcp/30334/p2p/16Uiu2HAm8dBwTRzqazCMqQDdR8thMa7BKiW4ep2B4DoQQp6Qhyfd  \
+  --reserved-nodes /dns4/p2p-testnet.fuel.network/tcp/30333/p2p/16Uiu2HAmDxoChB7AheKNvCVpD4PHJwuDGn8rifMBEHmEynGHvHrf \
   --sync-header-batch-size 100 \
   --enable-relayer \
-  --relayer-v2-listening-contracts 0x01855B78C1f8868DE70e84507ec735983bf262dA \
-  --relayer-da-deploy-height 5827607 \
-  --relayer-log-page-size 2000
+  --relayer-v2-listening-contracts=0x01855B78C1f8868DE70e84507ec735983bf262dA \
+  --relayer-da-deploy-height=5827607 \
+  --relayer-log-page-size=500 \
+  --sync-block-stream-buffer-size 30
 Restart=on-failture
 StandardOutput=syslog
 StandardError=syslog
