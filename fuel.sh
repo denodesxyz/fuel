@@ -55,8 +55,8 @@ ExecStart=$(which fuel-core) run \
   --keypair $P2P_SECRET \
   --relayer $SEPOLIA_RPC \
   --ip=0.0.0.0 --port=4000 --peering-port=30333 \
-  --db-path=~/.fuel \
-  --snapshot ~/.fuel \
+  --db-path=$HOME/.fuel \
+  --snapshot $HOME/.fuel \
   --utxo-validation --poa-instant false --enable-p2p \
   --reserved-nodes /dns4/p2p-testnet.fuel.network/tcp/30333/p2p/16Uiu2HAmDxoChB7AheKNvCVpD4PHJwuDGn8rifMBEHmEynGHvHrf \
   --sync-header-batch-size 100 \
