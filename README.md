@@ -27,7 +27,7 @@ During installation, the script generates a p2p key. This key is crucial for you
 ```
 curl -X POST http://0.0.0.0:4000/v1/graphql \
   -H "Content-Type: application/json" \
-  -d '{"query": "{ chainInfo: chain { latestBlock { id height } chainName: name } systemHealth: health nodeDetails: nodeInfo { peers { peerId: id } version: nodeVersion } }"}' \
+  -d '{"query": "{ chainInfo: chain { latestBlock { id height } chainName: name } systemHealth: health nodeDetails: nodeInfo { peers { peerId: id } version: nodeVersion } }"}'
 ```
 
 - Restart your node:
